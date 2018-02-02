@@ -86,7 +86,7 @@ def run(words, version=1, level='H', picture=None, colorized=False, contrast=1.0
         qr.resize((qr.size[0]*3, qr.size[1]*3)).save(qr_name)
         return qr_name
 
-    unique_id = uuid.uuid4()
+    unique_id = str(uuid.uuid4())[:8]
     tempdir = os.path.join(os.path.expanduser('~'), '.myqr_{}'.format(unique_id))
     
     try:
