@@ -12,7 +12,10 @@ setup(name='myqr',
       url='https://github.com/axlehire/axlehire-qrcode',
       author='Long Tran',
       author_email='long@axlehire.com',
-      packages=['MyQR'],
+      packages=[
+            'MyQR',
+            'MyQR.mylibs'
+      ],
       include_package_data=True,
       install_requires=['imageio', 'numpy', 'Pillow'],
       zip_safe=False)
