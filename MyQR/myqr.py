@@ -4,7 +4,8 @@
 import os
 from MyQR.mylibs import theqrmodule
 from PIL import Image
-   
+import uuid
+
 # Positional parameters
 #   words: str
 #
@@ -85,7 +86,8 @@ def run(words, version=1, level='H', picture=None, colorized=False, contrast=1.0
         qr.resize((qr.size[0]*3, qr.size[1]*3)).save(qr_name)
         return qr_name
 
-    tempdir = os.path.join(os.path.expanduser('~'), '.myqr')
+    unique_id = str(uuid.uuid4())[:8]
+    tempdir = os.path.join(os.path.expanduser('~'), '.myqr_{}'.format(unique_id))
     
     try:
         if not os.path.exists(tempdir):
